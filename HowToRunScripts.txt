@@ -1,0 +1,79 @@
+
+## How to run the script
+You cannot directly “run” a Python script from GitHub just by visiting its URL — GitHub only stores the file.
+To execute it, you need to download/clone it locally or use a service that can fetch and run it.
+Here are the main ways:
+
+1. Run Locally After Cloning
+# Clone the repository
+git clone https://github.com/SahilKumar777/Python-Scripts.git
+# Go into the repo folder
+cd Python-Scripts/Assignment_GET_API
+
+# Run the Python script
+python3 fetch_user_data.py
+
+✅ Works offline after cloning.
+⚠ Requires Python installed locally.
+
+2. Run Directly Without Cloning (via curl/wget)
+You can fetch the raw file and pipe it to Python:
+curl -s https://raw.githubusercontent.com/SahilKumar777/Python-Scripts/refs/heads/main/Assignment_GET_API/fetch_user_data.py | python3
+
+Or:
+wget -qO- https://raw.githubusercontent.com/SahilKumar777/Python-Scripts/refs/heads/main/Assignment_GET_API/fetch_user_data.py | python3
+
+✅ Quick one-liner.
+⚠ No caching — downloads every time.
+
+3. Run in Google Colab (No Local Setup)
+
+Go to Google Colab.
+Click File → Open Notebook → GitHub.
+Paste the repo URL and open the .py or .ipynb file.
+Run cells in the browser.
+
+✅ No installation needed.
+⚠ Requires internet.
+
+4. Run Automatically with GitHub Actions
+If you want the script to run on GitHub’s servers (e.g., on push or schedule):
+.github/workflows/run-script.yml
+name: Run Python Script
+
+on:
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: "0 0 * * *"  # Every day at midnight UTC
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run script
+        run: python script_name.py
+
+✅ Runs in the cloud automatically.
+⚠ Cannot interact with your local machine.
+
+5. Run in Replit or Other Online IDEs
+
+Import the GitHub repo into Replit.
+Click Run.
+
+✅ Browser-based, no setup.
+⚠ Limited resources.
+
+💡 Recommendation:
+If you just want to quickly execute a Python script from GitHub without cloning, method #2 is fastest.
+If you want it to run automatically on a schedule, use GitHub Actions.
+
+If you want, I can give you a ready-to-use GitHub Actions workflow that runs your Python script daily and emails you the output.
+Do you want me to prepare that?
