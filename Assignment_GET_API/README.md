@@ -10,7 +10,7 @@ following details:
 
 #### Author: Sahil Kumar
 #### Date: 2025-11-11
-
+---
 ## How to run the script [3 Methods]
 
 ### 1. Run in Google Colab (No Local Setup)
@@ -27,7 +27,7 @@ Script will run in Google Colab.
 
 ⚠ Requires internet.
 
-
+###################################################################
 ### 2. Run Locally After Cloning
 Clone the repository
 * git clone https://github.com/SahilKumar777/Python-Scripts.git
@@ -42,7 +42,7 @@ Run the Python script
 
 ⚠ Requires Python installed locally.
 
-
+###################################################################
 ### 3. Run Directly Without Cloning (via curl/wget)
 You can fetch the raw file and pipe it to Python:
 
@@ -56,6 +56,7 @@ wget -qO- https://raw.githubusercontent.com/SahilKumar777/Python-Scripts/refs/he
 
 ⚠ No caching — downloads every time.
 
+###################################################################
 ### 💡 Recommendation:
 If you just want to quickly execute a Python script without cloning, method #1 is best.
 
